@@ -1,0 +1,316 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  --red: rgb(88, 88, 229);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 475px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 7rem;
+  background-color: var(--red);
+  transition: clip-path 0.3s;
+  clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
+  position: fixed;
+  z-index: 5;
+}
+
+header a {
+  font-size: 2rem;
+  padding: 0.5rem;
+  transition: color 0.3s, outline 0.7s;
+  outline-color: var(--red);
+}
+
+a {
+  text-decoration: none;
+}
+
+nav a:link {
+  color: white;
+}
+
+nav a:visited {
+  color: white;
+}
+
+nav a:hover {
+  color: silver;
+  outline: thin solid;
+}
+
+nav a:active {
+  color: white;
+}
+
+nav {
+  margin: 1rem;
+}
+
+h1 {
+  font-size: 4rem;
+  padding-left: 2rem;
+  color: white;
+  margin: 0.5rem 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+#profile {
+  width: 100px;
+  height: 100px;
+  max-height: 100px;
+  min-height: 100px;
+  clip-path: circle(50px at center);
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  margin: 7rem auto 1rem;
+  justify-content: center;
+}
+
+main section {
+  display: flex;
+  margin: 1rem;
+}
+
+.together {
+  color: black;
+  font-weight: 300;
+  font-size: 2rem;
+  padding: 1rem;
+  max-height: 60px;
+  text-align: center;
+  width: 100%;
+}
+
+#about,
+#contact {
+  min-height: 10rem;
+}
+
+.aboutMe {
+ font-size: 1.5rem;
+ text-align: center;
+}
+
+#about .wide {
+  margin: 1.5rem 0;
+  padding: 0 5%;
+}
+
+.narrow {
+  flex: 1 1 20%;
+}
+
+.col.narrow {
+  text-align: end;
+  padding: 1rem;
+  margin-right: 1rem;
+  border-right: 0.2rem solid var(--red);
+  flex-shrink: 0;
+}
+
+.wide {
+  flex: 1 1 60%;
+}
+
+#work .wide {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imgItem {
+  text-align: center;
+  margin: 1rem;
+}
+
+.imgItem a:link {
+  color: white;
+}
+
+.imgItem a:visited {
+  color: white;
+}
+
+.imgItem a:hover {
+  color: white;
+}
+
+.imgItem a:active {
+  color: white;
+}
+
+.imgItem a:focus {
+  color: white;
+}
+
+
+.imgItem:hover .projectLabel {
+  width: 20rem;
+}
+
+img {
+  transition: opacity 0.3s;
+  outline: 3px solid var(--red);
+}
+
+.imgItem:hover img {
+  opacity: 80%;
+}
+
+.imgLarge {
+  margin-top: 0;
+  width: 100%;
+}
+
+.projectLabel {
+  background-color: var(--red);
+  background: var(--red);
+  width: 10rem;
+  transition: width 0.5s;
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+}
+
+h4 {
+  color: white;
+  font-weight: 300;
+  font-size: 1.5rem;
+  padding: 1rem;
+  width: 10rem;
+  margin: -4rem 0 0 0%;
+  max-height: 60px;
+}
+
+#contact .wide {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#contact a {
+  font-size: 2rem;
+  margin: auto;
+  padding: 1rem;
+  transition: color 1s, outline 2s;
+}
+
+#contact a:link {
+  color: black;
+  outline: thin white;
+}
+
+#contact a:visited {
+  color: black;
+  outline: thin white;
+}
+
+#contact a:hover {
+  color: var(--red);
+  outline: thin solid;
+}
+
+#contact a:active {
+  color: var(--red);
+}
+
+footer h6 {
+  text-align: end;
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 0.5rem 1rem;
+}
+
+/***** MEDIA QUERIES *****/
+@media screen and (max-width: 992px) {
+  header {
+    position: relative;
+    flex-direction: column;
+    flex-wrap: wrap;
+    z-index: 0;
+    transition: clip-path 0.3s;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    min-height: 30rems;
+    text-align: center;
+  }
+
+  main {
+    margin: 1rem;
+    flex-direction: column;
+  }
+
+  main section {
+    flex-direction: column;
+  }
+
+  .imgItem,
+  img {
+    max-width: 400px;
+    min-height: 300px;
+  }
+
+  .col.narrow {
+    text-align: center;
+    border-right: unset;
+    border-bottom: 0.2rem solid var(--red);
+  }
+
+  #work .wide {
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  .imgLarge {
+    all: unset;
+  }
+
+  .imgItem {
+    all: unset;
+  }
+
+  h1 {
+    margin: 1rem;
+    padding: 0;
+  }
+
+  .col.narrow {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  header {
+    transition: clip-path 0.3s;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  nav {
+    transition: flex-direction 0.5s;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  main section {
+    flex-direction: column;
+  }
+
+  #work .wide {
+    flex-direction: column;
+    align-items: center;
+  }
+}
